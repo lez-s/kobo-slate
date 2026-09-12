@@ -16,15 +16,20 @@ one reboot away if you want your books back.
 Open-sourced because it may as well be. Take whatever is useful.
 
 <p align="center">
-  <a href="assets/demo.mp4"><img src="assets/notepad.jpg" alt="Writing on the notepad, two fingers mid-pinch to zoom the canvas" width="45%"></a>
+  <img src="assets/notepad.jpg" alt="Writing on the notepad, two fingers mid-pinch to zoom the canvas" width="45%">
   <img src="assets/dashboard-panel.png" alt="A dashboard panel on the device: two account cards, an assistant-usage strip, and a five-day forecast" width="35%">
 </p>
 
-*Left: the notepad, mid-pinch. [Click it for the clip](assets/demo.mp4) — GitHub
-will not play a video inside a README, but it plays one on the file page.
-Right: what the dashboard shows. The device did not compute any of that; it
-downloaded the picture and drew it, and the figures are invented for the
-screenshot.*
+*Left: the notepad, mid-pinch — one finger pans, two zoom, and the canvas does
+not end. Right: what the dashboard shows. The device did not compute any of
+that; it downloaded the picture and drew it, and the figures are invented for
+the screenshot.*
+
+https://github.com/user-attachments/assets/9ebad91e-d235-449f-b69b-61bf579bb42d
+
+*The same clip is committed at [`assets/demo.mp4`](assets/demo.mp4), so it
+survives a clone — the player above is hosted by GitHub and is not part of the
+repository.*
 
 ## The notepad
 

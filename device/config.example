@@ -1,0 +1,53 @@
+# Kobo dashboard device configuration. This file is sourced by /bin/sh.
+# Keep DEV=1 until the loop has been accepted manually on the device.
+: "${DEV:=1}"
+: "${FAKE:=1}"
+
+# The home network the device is allowed to associate with. The dashboard
+# refuses to publish over any other SSID, so this is a deliberate whitelist
+# of one, not a convenience default.
+: "${SSID:=YOUR-HOME-SSID}"
+: "${LAN_ENDPOINT:=http://192.168.8.1:8088}"
+: "${SSH_USER:=your-user}"
+# Opt-in only. A cloud VM's public address is typically ephemeral, so it goes
+# stale on any restart and fails silently. Empty disables the ssh path
+# entirely; fill in the current address by hand to enable it.
+: "${SSH_HOST:=}"
+: "${SSH_KEY:=/mnt/onboard/.adds/kobo-dash/id_dropbear}"
+: "${DBCLIENT:=/mnt/onboard/.adds/koreader/dbclient}"
+
+: "${INTERFACE:=wlan0}"
+: "${PLATFORM:=mt8113t-ntx}"
+: "${WIFI_MODULE:=wlan_drv_gen4m}"
+: "${POWER_TOGGLE:=wmt}"
+: "${WPA_SUPPLICANT_DRIVER:=nl80211}"
+: "${KMOD_PATH:=/drivers/mt8113t-ntx/mt66xx}"
+
+: "${FB_DEVICE:=/dev/fb0}"
+: "${FBINK:=/mnt/onboard/.adds/koreader/fbink}"
+: "${NOTEPAD:=/mnt/onboard/.adds/kobo-dash/notepad}"
+: "${FRAME_BYTES:=8494080}"
+: "${FAKE_FRAME:=/mnt/onboard/.adds/kobo-dash/fake-frame.raw.gz}"
+: "${FAKE_DATA_SHA:=phase0-fake-data-v1}"
+
+: "${RTC:=/sys/class/rtc/rtc0/wakealarm}"
+: "${BATTERY_STATUS:=/sys/class/power_supply/bd71827_bat/status}"
+# The authoritative "external power is connected" signal (type=Mains).
+: "${AC_ONLINE:=/sys/class/power_supply/bd71827_ac/online}"
+: "${BATTERY_CAPACITY:=/sys/class/power_supply/bd71827_bat/capacity}"
+: "${INTERVAL_SECONDS:=300}"
+: "${BACKOFF_SECONDS:=300 600 1200}"
+: "${LOCAL_FAILURE_THRESHOLD:=3}"
+# Two POWER-key presses within this many seconds exit the loop and reboot into
+# Nickel. Page-key presses refresh the panel and never count toward this, so
+# the power key is the only way out short of a 30-second forced reset.
+: "${EXIT_PRESS_WINDOW:=30}"
+
+# Wakeup event counters used to tell a page press from a power press on resume.
+# Left empty so dash.sh discovers them once at startup; set them only if that
+# discovery picks the wrong node. Anything other than an unambiguous page press
+# is treated as a power press, so a bad path costs refreshes, never the exit.
+: "${PAGE_WAKEUP_COUNT:=}"
+: "${POWER_WAKEUP_COUNT:=}"
+: "${LOG_FILE:=/mnt/onboard/.adds/kobo-dash/dash.log}"
+: "${STATE_DIR:=/mnt/onboard/.adds/kobo-dash/state}"

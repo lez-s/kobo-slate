@@ -1,0 +1,16 @@
+# Host test binaries and their debug bundles.
+test_core
+test_gesture
+test_core_san
+test_gesture_san
+*.dSYM/
+
+# Cross-built device binary, produced by build.sh on the build host.
+build/
+
+# Notebooks and anything knp2svg.py renders from them: real data or scratch,
+# never source. Pull one off the device with scp when you need it.
+*.knp
+*.knp.bad
+tools/*.svg
+tools/*.pdf

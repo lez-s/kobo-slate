@@ -1,0 +1,15 @@
+# NickelMenu entry for the dashboard loop.
+# Deploy to /mnt/onboard/.adds/nm/kobo-dash
+#
+# Static cmd_spawn on purpose, not a kfmon generator: the 4.45 firmware upgrade
+# wiped KFMon from rootfs on this device, which broke the generator and made the
+# KOReader entry vanish. A static line has nothing to regenerate.
+#
+# Tapping this stops Nickel and hands the panel to dash.sh, which then owns the
+# device: page keys move between its pages (dashboard, notepad) and a double
+# press of the power button reboots back here. Long-pressing power for ~30
+# seconds remains the fallback if the loop is ever wedged.
+#
+# There is deliberately no exit menu_item -- once Nickel is stopped there is no
+# menu left to tap.
+menu_item : main : Dashboard : cmd_spawn : quiet : exec /mnt/onboard/.adds/kobo-dash/dash.sh

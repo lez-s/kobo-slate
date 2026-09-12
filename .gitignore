@@ -1,0 +1,14 @@
+# Device-side configuration, copied from device/config.example and filled in
+# with a real SSID and host. Never tracked.
+device/config
+
+# Notebooks pulled off the device, and anything rendered from them.
+*.knp
+*.knp.bad
+
+*.log
+.env
+*.env
+__pycache__/
+*.pyc
+.DS_Store

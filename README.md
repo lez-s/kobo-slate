@@ -23,10 +23,6 @@ https://github.com/user-attachments/assets/9ebad91e-d235-449f-b69b-61bf579bb42d
 *That player is hosted by GitHub and is not part of the repository; the clip is
 also committed at [`assets/demo.mp4`](assets/demo.mp4), so it survives a clone.*
 
-<p align="center">
-  <img src="assets/dashboard-panel.png" alt="A dashboard panel on the device: two account cards, an assistant-usage strip, and a five-day forecast" width="42%">
-</p>
-
 *And what the dashboard shows. The device did not compute any of that; it
 downloaded the picture and drew it, and the figures are invented for the
 screenshot.*
